@@ -1,6 +1,6 @@
 '''
 Now that your videos have had each frame turned into a jpg in step one,
-AND we have taken those video frame jpgs and taken an equal, random sample of 500 images from each,
+AND we have taken those video frame jpgs and taken an equal, random sample of images from each,
 and placed all of those into one folder...
 We will now run this facial recognition script to look at how many faces are in each image.
 
