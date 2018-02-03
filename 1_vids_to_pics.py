@@ -1,5 +1,6 @@
 '''
 WARNING: Make a backup of your mp4s before running this script on them. THIS SCRIPT WILL REMOVE YOUR MP4s AFTER MAKING JPGs OF THEM.
+Make a backup copy of your files before using every script in this repo at every stage.
 
 Using OpenCV takes a mp4 video and produces a number of images.
 ---------- [ONLY USES FACES OF PEOPLE OVER 18]
