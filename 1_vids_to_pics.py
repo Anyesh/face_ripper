@@ -1,4 +1,6 @@
 '''
+WARNING: Make a backup of your mp4s before running this script on them. THIS SCRIPT WILL REMOVE YOUR MP4s AFTER MAKING JPGs OF THEM.
+
 Using OpenCV takes a mp4 video and produces a number of images.
 ---------- [ONLY USES FACES OF PEOPLE OVER 18]
 A WORD ABOUT SELECTING VIDEOS FOR FACE SCRAPING:
