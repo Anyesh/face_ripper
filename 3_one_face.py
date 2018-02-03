@@ -39,8 +39,8 @@ except OSError:
 
 trash = ('/PATH/CREATING/JPG/OUTPUT/FILE/DIR/FACES/YOU/DONT/WANT')
 try:
-	if not os.path.exists(trash):
-		os.makedirs(trash)
+	if not os.path.exists(trash_face):
+		os.makedirs(trash_face)
 except OSError:
 	print ('Error: Creating directory of data')
 
@@ -52,31 +52,31 @@ except OSError:
 	print ('Error: Creating directory of data')
 
 for i in range (3):
-
-	# Load the jpg file into a numpy array
-	aly = (random.choice(glob.glob('/PATH/OF/JPG/INPUT/DIRS/'+'*.jpg')))
-	image = face_recognition.load_image_file(aly)
-
-	print (str(aly))
-
-	# Find all the faces in the image using a pre-trained convolutional neural network.
-	# This method is more accurate than the default HOG model, but it's slower
-	# unless you have an nvidia GPU and dlib compiled with CUDA extensions. But if you do,
-	# this will use GPU acceleration and perform well.
-	# See also: find_faces_in_picture.py
-	face_locations = face_recognition.face_locations(image, number_of_times_to_upsample=0, model="cnn")
-
-	print("I found {} face(s) in this photograph.".format(len(face_locations)))
-
-	if not (len(face_locations)) == 1:
-		os.rename(aly, trash + '/' + str(uuid.uuid4()) + '.jpg')
 	try:
-		os.rename(aly, one_face + str(uuid.uuid4()) + '.jpg')
+		# Load the jpg file into a numpy array
+		aly = (random.choice(glob.glob('/PATH/OF/JPG/INPUT/DIRS/'+'*.jpg')))
+		image = face_recognition.load_image_file(aly)
+
+		print (str(aly))
+
+		# Find all the faces in the image using a pre-trained convolutional neural network.
+		# This method is more accurate than the default HOG model, but it's slower
+		# unless you have an nvidia GPU and dlib compiled with CUDA extensions. But if you do,
+		# this will use GPU acceleration and perform well.
+		# See also: find_faces_in_picture.py
+		face_locations = face_recognition.face_locations(image, number_of_times_to_upsample=0, model="cnn")
+
+		print("I found {} face(s) in this photograph.".format(len(face_locations)))
+
+		if not (len(face_locations)) == 1:
+			os.rename(aly, trash_face + '/' + str(uuid.uuid4()) + '.jpg')
+		try:
+			os.rename(aly, one_face + str(uuid.uuid4()) + '.jpg')
+		except:
+			pass
 	except:
+		os.rename(aly, problem_file + '/' + str(uuid.uuid4()) + '.jpg')
 		pass
-#	except:
-#		os.rename(aly, problem_file + '/' + str(uuid.uuid4()) + '.jpg')
-#		pass
 
 
 # We will now process the images created by this script in the next script, 4_the_face.py 
