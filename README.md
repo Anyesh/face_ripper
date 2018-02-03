@@ -31,7 +31,8 @@ This code does not crop the image to isolate the faces.
 # Dependancies
 These scripts are dependant on the face_recognition app by ageitgey here https://github.com/ageitgey/face_recognition
 
-All dependancies required to run that (face_recognition module) are the depancies needed to be installed to run this.
+All dependancies required to run that (face_recognition module) are the depancies needed to be installed to run this. You're
+best off scanning the issues tab on that repo when you run into problems instead of opening a new issue here.
 So, go get face_recognition installed and tested first and then you should be good to go with this repo.
 
 face_recognition requires a package called dlib.
